@@ -1,6 +1,6 @@
 from persistence.db import get_connection
 
-# Clase Monster que representa a un monstruo en la tabla de la pagina.
+
 class Monster:
 
     def __init__(self, name, power, id=None):
@@ -22,7 +22,7 @@ class Monster:
         connection = get_connection()
         cursor = connection.cursor()
         cursor.execute('INSERT INTO monster (name, power) VALUES (%s, %s)',
-                    (self.name, self.power))
+                       (self.name, self.power))
         connection.commit()
         cursor.close()
         connection.close()
